@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6703563621C9C13600A7FA43 /* More.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6703563521C9C13600A7FA43 /* More.swift */; };
+		671E553321C98EC10082C0A1 /* searchByData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671E553221C98EC10082C0A1 /* searchByData.swift */; };
+		671E553521C98EE10082C0A1 /* searchByHell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671E553421C98EE10082C0A1 /* searchByHell.swift */; };
+		671E553B21C9A00C0082C0A1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671E553A21C9A00C0082C0A1 /* Home.swift */; };
+		674A209321BAC5D80038ACC9 /* btnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A209221BAC5D80038ACC9 /* btnView.swift */; };
+		6751A7BB21B8093700E45D82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751A7BA21B8093700E45D82 /* AppDelegate.swift */; };
+		6751A7BD21B8093700E45D82 /* mainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751A7BC21B8093700E45D82 /* mainVC.swift */; };
+		6751A7C021B8093700E45D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6751A7BE21B8093700E45D82 /* Main.storyboard */; };
+		6751A7C321B8093700E45D82 /* loqye.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6751A7C121B8093700E45D82 /* loqye.xcdatamodeld */; };
+		6751A7C521B8093900E45D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6751A7C421B8093900E45D82 /* Assets.xcassets */; };
+		6751A7C821B8093900E45D82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6751A7C621B8093900E45D82 /* LaunchScreen.storyboard */; };
+		6755D43521CD7CAD00215209 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6755D43421CD7CAD00215209 /* API.swift */; };
+		6755D43821CD7CFD00215209 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6755D43721CD7CFD00215209 /* Urls.swift */; };
+		6755D43B21CD91D000215209 /* placeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6755D43A21CD91D000215209 /* placeDetails.swift */; };
+		9F0C0B09E1CB1B77754A706E /* Pods_loqye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5D1523DD0E8585C00A2574 /* Pods_loqye.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D5D1523DD0E8585C00A2574 /* Pods_loqye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_loqye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A6D415AF5D85D10CBF33848 /* Pods-loqye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loqye.release.xcconfig"; path = "Pods/Target Support Files/Pods-loqye/Pods-loqye.release.xcconfig"; sourceTree = "<group>"; };
+		6703563521C9C13600A7FA43 /* More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = More.swift; sourceTree = "<group>"; };
+		671E553221C98EC10082C0A1 /* searchByData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchByData.swift; sourceTree = "<group>"; };
+		671E553421C98EE10082C0A1 /* searchByHell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchByHell.swift; sourceTree = "<group>"; };
+		671E553A21C9A00C0082C0A1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		674A209221BAC5D80038ACC9 /* btnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = btnView.swift; sourceTree = "<group>"; };
+		6751A7B721B8093700E45D82 /* loqye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loqye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6751A7BA21B8093700E45D82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6751A7BC21B8093700E45D82 /* mainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainVC.swift; sourceTree = "<group>"; };
+		6751A7BF21B8093700E45D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6751A7C221B8093700E45D82 /* loqye.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = loqye.xcdatamodel; sourceTree = "<group>"; };
+		6751A7C421B8093900E45D82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6751A7C721B8093900E45D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6751A7C921B8093900E45D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6755D43421CD7CAD00215209 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6755D43721CD7CFD00215209 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		6755D43A21CD91D000215209 /* placeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeDetails.swift; sourceTree = "<group>"; };
+		6DC4DA547DD66AB922B0FD34 /* Pods-loqye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loqye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loqye/Pods-loqye.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6751A7B421B8093700E45D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F0C0B09E1CB1B77754A706E /* Pods_loqye.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DDF145F65ED14E84972BAD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D5D1523DD0E8585C00A2574 /* Pods_loqye.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		671E553121C98E710082C0A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				671E553221C98EC10082C0A1 /* searchByData.swift */,
+				671E553421C98EE10082C0A1 /* searchByHell.swift */,
+				671E553A21C9A00C0082C0A1 /* Home.swift */,
+				6751A7BC21B8093700E45D82 /* mainVC.swift */,
+				6703563521C9C13600A7FA43 /* More.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		674A209121BAC5B00038ACC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				674A209221BAC5D80038ACC9 /* btnView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6751A7AE21B8093700E45D82 = {
+			isa = PBXGroup;
+			children = (
+				6751A7B921B8093700E45D82 /* loqye */,
+				6751A7B821B8093700E45D82 /* Products */,
+				885F294B93FBD7536CFC7636 /* Pods */,
+				5DDF145F65ED14E84972BAD3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6751A7B821B8093700E45D82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6751A7B721B8093700E45D82 /* loqye.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6751A7B921B8093700E45D82 /* loqye */ = {
+			isa = PBXGroup;
+			children = (
+				6755D43621CD7CDF00215209 /* supportFiles */,
+				6755D43321CD7C8F00215209 /* API */,
+				6755D43921CD91A600215209 /* model */,
+				671E553121C98E710082C0A1 /* Controller */,
+				674A209121BAC5B00038ACC9 /* Views */,
+				6751A7BA21B8093700E45D82 /* AppDelegate.swift */,
+				6751A7BE21B8093700E45D82 /* Main.storyboard */,
+				6751A7C421B8093900E45D82 /* Assets.xcassets */,
+				6751A7C621B8093900E45D82 /* LaunchScreen.storyboard */,
+				6751A7C921B8093900E45D82 /* Info.plist */,
+				6751A7C121B8093700E45D82 /* loqye.xcdatamodeld */,
+			);
+			path = loqye;
+			sourceTree = "<group>";
+		};
+		6755D43321CD7C8F00215209 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6755D43421CD7CAD00215209 /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6755D43621CD7CDF00215209 /* supportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6755D43721CD7CFD00215209 /* Urls.swift */,
+			);
+			path = supportFiles;
+			sourceTree = "<group>";
+		};
+		6755D43921CD91A600215209 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6755D43A21CD91D000215209 /* placeDetails.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		885F294B93FBD7536CFC7636 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DC4DA547DD66AB922B0FD34 /* Pods-loqye.debug.xcconfig */,
+				4A6D415AF5D85D10CBF33848 /* Pods-loqye.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6751A7B621B8093700E45D82 /* loqye */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6751A7CC21B8093900E45D82 /* Build configuration list for PBXNativeTarget "loqye" */;
+			buildPhases = (
+				F355B5D905B852FE490BBB3D /* [CP] Check Pods Manifest.lock */,
+				6751A7B321B8093700E45D82 /* Sources */,
+				6751A7B421B8093700E45D82 /* Frameworks */,
+				6751A7B521B8093700E45D82 /* Resources */,
+				85E651BDFC5C557649D19203 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = loqye;
+			productName = loqye;
+			productReference = 6751A7B721B8093700E45D82 /* loqye.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6751A7AF21B8093700E45D82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = youssef;
+				TargetAttributes = {
+					6751A7B621B8093700E45D82 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 6751A7B221B8093700E45D82 /* Build configuration list for PBXProject "loqye" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6751A7AE21B8093700E45D82;
+			productRefGroup = 6751A7B821B8093700E45D82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6751A7B621B8093700E45D82 /* loqye */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6751A7B521B8093700E45D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6751A7C821B8093900E45D82 /* LaunchScreen.storyboard in Resources */,
+				6751A7C521B8093900E45D82 /* Assets.xcassets in Resources */,
+				6751A7C021B8093700E45D82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85E651BDFC5C557649D19203 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-loqye/Pods-loqye-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-loqye/Pods-loqye-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F355B5D905B852FE490BBB3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-loqye-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6751A7B321B8093700E45D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6751A7C321B8093700E45D82 /* loqye.xcdatamodeld in Sources */,
+				6703563621C9C13600A7FA43 /* More.swift in Sources */,
+				671E553321C98EC10082C0A1 /* searchByData.swift in Sources */,
+				6755D43B21CD91D000215209 /* placeDetails.swift in Sources */,
+				6751A7BD21B8093700E45D82 /* mainVC.swift in Sources */,
+				6751A7BB21B8093700E45D82 /* AppDelegate.swift in Sources */,
+				674A209321BAC5D80038ACC9 /* btnView.swift in Sources */,
+				671E553B21C9A00C0082C0A1 /* Home.swift in Sources */,
+				6755D43521CD7CAD00215209 /* API.swift in Sources */,
+				671E553521C98EE10082C0A1 /* searchByHell.swift in Sources */,
+				6755D43821CD7CFD00215209 /* Urls.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6751A7BE21B8093700E45D82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6751A7BF21B8093700E45D82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6751A7C621B8093900E45D82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6751A7C721B8093900E45D82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6751A7CA21B8093900E45D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6751A7CB21B8093900E45D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6751A7CD21B8093900E45D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC4DA547DD66AB922B0FD34 /* Pods-loqye.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = loqye/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = personal.loqye;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6751A7CE21B8093900E45D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A6D415AF5D85D10CBF33848 /* Pods-loqye.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = loqye/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = personal.loqye;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6751A7B221B8093700E45D82 /* Build configuration list for PBXProject "loqye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6751A7CA21B8093900E45D82 /* Debug */,
+				6751A7CB21B8093900E45D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6751A7CC21B8093900E45D82 /* Build configuration list for PBXNativeTarget "loqye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6751A7CD21B8093900E45D82 /* Debug */,
+				6751A7CE21B8093900E45D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6751A7C121B8093700E45D82 /* loqye.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6751A7C221B8093700E45D82 /* loqye.xcdatamodel */,
+			);
+			currentVersion = 6751A7C221B8093700E45D82 /* loqye.xcdatamodel */;
+			path = loqye.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6751A7AF21B8093700E45D82 /* Project object */;
+}

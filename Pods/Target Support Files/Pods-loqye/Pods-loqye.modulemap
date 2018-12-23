@@ -1,0 +1,6 @@
+framework module Pods_loqye {
+  umbrella header "Pods-loqye-umbrella.h"
+
+  export *
+  module * { export * }
+}
