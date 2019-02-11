@@ -1,0 +1,179 @@
+//
+//  showDatielsVC.swift
+//  loqye
+//
+//  Created by youssef on 1/15/19.
+//  Copyright © 2019 youssef. All rights reserved.
+//
+
+import UIKit
+import Kingfisher
+
+class showDatielsVC: UIViewController {
+
+    @IBOutlet weak var placeRule: UITextView!
+    var id : Int = 0
+    var spanner : UIActivityIndicatorView?
+    var screnSize = UIScreen.main.bounds
+    var imagesliderURL = [String]()
+    var imagessliders = [UIImage]()
+    
+    var currentPage = 0
+    @IBOutlet weak var pagecontrollerImage: UIPageControl!
+   
+    
+    @IBOutlet weak var imagecollectionView: UICollectionView!
+    @IBOutlet weak var imageHell: UIImageView!
+    
+    @IBOutlet weak var pricelbl: UILabel!
+    
+    @IBOutlet weak var arealbl: UILabel!
+    
+    
+    @IBOutlet weak var avaliblelbl: UILabel!
+    
+    @IBOutlet weak var distanceFromHere: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var staflbl: UILabel!
+    
+    @IBOutlet weak var scrollViewPlaceDatails: UIScrollView!
+    @IBOutlet weak var numberOfRoom: UILabel!
+    
+    @IBOutlet weak var numberOfChairlbl: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        imagecollectionView.dataSource = self
+        imagecollectionView.delegate = self
+        placeRule.delegate = self
+        placeRule.isScrollEnabled = false
+        addspanner()
+    
+        handelAllData(id: id)
+    
+    }
+    
+    
+    
+    func handelAllData(id : Int) {
+        print(id)
+        if id > 0 {
+            API.get_Place_by_id(places_id: id) { (succes:Bool, Alldata:placeDetails?) in
+                if succes{
+                    guard let dataPlace = Alldata else{
+                        return
+                    }
+                    
+                    self.arealbl.text = dataPlace.area
+                    self.location.text = dataPlace.address
+                    self.avaliblelbl.text = dataPlace.availiable
+                    self.staflbl.text = dataPlace.workers
+                    self.imageHell.image = dataPlace.image
+                    self.numberOfChairlbl.text = dataPlace.chairs
+                    print(dataPlace.chairs)
+                    self.numberOfRoom.text = dataPlace.rooms
+                    self.imagesliderURL = dataPlace.images
+                    DispatchQueue.main.async(execute: {
+                      
+                        self.imagecollectionView.reloadData()
+                    })
+                    
+                    self.pricelbl.text = "\(dataPlace.price)"
+                    self.distanceFromHere.text = "١٠٠ كيلو متر"
+                    self.pagecontrollerImage.numberOfPages = dataPlace.images.count
+                    self.placeRule.text = dataPlace.details
+                    self.scrollViewPlaceDatails.isHidden = false
+                    self.removerspanner()
+                    
+                }
+                else{
+                    let alert = UIAlertController(title: "error", message: "there are some problem with connection", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { (UIAlertAction) in
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }else{
+            print("id = 0")
+        }
+    }
+    
+    @IBAction func reserveBtn(_ sender: Any) {
+        performSegue(withIdentifier: "reserve", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! reservePlace
+        vc.id = self.id
+    }
+    
+    func addspanner() {
+        spanner = UIActivityIndicatorView()
+        spanner?.center = CGPoint( x: (screnSize.width/2) - ((spanner?.frame.width)!/2), y: screnSize.height/2)
+        spanner?.style = .whiteLarge
+        spanner?.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        spanner?.startAnimating()
+        view.addSubview(spanner!)
+    }
+    
+    func removerspanner(){
+        if spanner != nil{
+            spanner?.removeFromSuperview()
+        }
+    }
+
+}
+extension showDatielsVC: UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if imagesliderURL.count > 0{
+            return imagesliderURL.count
+        }else{
+            return 4
+        }
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sliderCell", for: indexPath) as! sliderCell
+        let imaged = UIImage(named: "imd")
+        if imagessliders.count > 0{
+            for url in self.imagesliderURL {
+                let URL_image = URL(string: url)
+                cell.sliderimage.kf.setImage(with: URL_image, placeholder: imaged, options: [.transition(ImageTransition.flipFromLeft(0.5))], progressBlock: nil) { (image, error, cache, url) in
+                    self.imagessliders.append(image!)
+                }
+                
+            }
+        
+        }else {
+            cell.image = UIImage(named: "imd")
+        }
+        
+        return cell
+        
+    }
+}
+
+extension showDatielsVC : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.height)
+    }
+    
+    
+}
+
+extension showDatielsVC : UICollectionViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        currentPage = Int(scrollView.contentOffset.x / self.imagecollectionView.frame.width)
+        pagecontrollerImage.currentPage = currentPage
+    }
+}
+
+extension showDatielsVC : UITextViewDelegate{
+    
+}

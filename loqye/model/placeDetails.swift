@@ -43,6 +43,7 @@
  */
 
 import Foundation
+import UIKit
 
 struct placeDetails {
     
@@ -56,7 +57,7 @@ struct placeDetails {
     var workers : String
     var address : String
     var chairs : String
-    var rating :String
-    var image : String
-    var imagePath : String
+    var rating :Int
+    var image : UIImage
+    var images = [String]()
 }

@@ -10,4 +10,9 @@ target 'loqye' do
   # Pods for loqye
 pod 'Alamofire'
 pod 'SwiftyJSON', '~> 4.0'
+pod 'Cosmos'
+pod 'TinyConstraints'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Kingfisher'
 end

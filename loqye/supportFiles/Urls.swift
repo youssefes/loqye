@@ -8,19 +8,29 @@
 
 import Foundation
 
-//complation with state only
+///complation with state only
 typealias complationHandler = (_ success : Bool)->Void
 
-let MAIN_URL = "luqia.net/api"
+let MAIN_URL = "https://luqia.net/api/"
+///url_search
+let SEARCH_BY_PLACE = "\(MAIN_URL)search"
+/// Url_department
+let DEPARTMENT = "\(MAIN_URL)depts"
 
-//url_search
-let SEARCH_BY_PLACE = "\(MAIN_URL)/search"
-// Url_department
-let DEPARTMENT = "\(MAIN_URL)/depts"
-// url_all_Places
-let PLACES = "\(MAIN_URL)/places"
+/// url offer of places
 
-//url_place_details_show
+let OFFERS = "\(MAIN_URL)offers"
+/// reserve URl
+let RESERVE = "https://luqia.net/api/reserve"
+/// url contectUS
+let CONTECTUS = "\(MAIN_URL)contact_us"
+/// url Openion customer
+let OPENINE = "\(MAIN_URL)clients-opinions"
+/// url FAQ
 
-let PLACE_DETAILS = "\(MAIN_URL)/places/show"
+let FAQURL = "\(MAIN_URL)faq"
+
+/// url our-contacts
+
+let OUR_CONTACTS = "\(MAIN_URL)our-contacts"
 

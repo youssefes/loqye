@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import UserNotifications
+import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,]) { (Authoriaed:Bool, error:Error?) in
+       
+        FirebaseApp.configure()
+        Auth.auth().signInAnonymously { (user:AuthDataResult?, error:Error?) in
+            if let error = error{
+                print(error)
+            }else{
+                print(user)
+            }
+        }
+       
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (Authoriaed:Bool, error:Error?) in
             if !Authoriaed{
                 print("app useless becouse app did authorithed")
             }
+            
         }
         return true
     }

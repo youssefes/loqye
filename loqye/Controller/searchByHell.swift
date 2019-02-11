@@ -10,21 +10,52 @@ import UIKit
 
 class searchByHell: UIViewController {
 
+    var textFiledText = ""
+    var allData = [dataByName]()
+    
+    @IBOutlet weak public var txtField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+   
+    
+   
+    @IBAction func btnShowSearchByData(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnSearchByName(_ sender: Any) {
+        guard let text = txtField.text, !text.isEmpty else {
+            return
+        }
+        textFiledText = text
+        performSegue(withIdentifier: "showResult", sender: nil)
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! searchResult
+        vc.text = self.textFiledText
+    }
+    
+  
+    
+    
+/*extension UITextField{
+    
+    func addImageTxtField(image : UIImage ){
+        let rightImageView = UIImageView(frame: CGRect(x: 0 , y: 0, width: image.size.width, height: image.size.height))
+        rightImageView.image = image
+        
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: image.size.width + 10, height: image.size.width))
+        view.addSubview(rightImageView)
+        
+        self.rightView = view
+        self.rightViewMode = .always
+    }
+ */
+    
+    
 }
