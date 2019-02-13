@@ -15,4 +15,5 @@ pod 'TinyConstraints'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Kingfisher'
+pod 'Firebase/Database'
 end

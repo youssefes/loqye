@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-
+import Firebase
 class showDatielsVC: UIViewController {
 
     @IBOutlet weak var placeRule: UITextView!
@@ -17,7 +17,7 @@ class showDatielsVC: UIViewController {
     var screnSize = UIScreen.main.bounds
     var imagesliderURL = [String]()
     var imagessliders = [UIImage]()
-    
+    var allDataPlaceDe : placeDetails?
     var currentPage = 0
     @IBOutlet weak var pagecontrollerImage: UIPageControl!
    
@@ -52,9 +52,6 @@ class showDatielsVC: UIViewController {
         handelAllData(id: id)
     
     }
-    
-    
-    
     func handelAllData(id : Int) {
         print(id)
         if id > 0 {
@@ -63,6 +60,7 @@ class showDatielsVC: UIViewController {
                     guard let dataPlace = Alldata else{
                         return
                     }
+                    self.allDataPlaceDe = dataPlace
                     
                     self.arealbl.text = dataPlace.area
                     self.location.text = dataPlace.address
@@ -100,14 +98,30 @@ class showDatielsVC: UIViewController {
     }
     
     @IBAction func reserveBtn(_ sender: Any) {
-        performSegue(withIdentifier: "reserve", sender: nil)
         
+        Auth.auth().addStateDidChangeListener({ (auth, users) in
+            if users != nil{
+                self.performSegue(withIdentifier: "reserve", sender: nil)
+                print(users?.uid)
+            }
+            else{
+                self.performSegue(withIdentifier: "createEmailToReservation", sender: nil)
+            }
+        })
+            
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! reservePlace
-        vc.id = self.id
+        if let vc = segue.destination as? reservePlace {
+            vc.id = self.id
+            vc.allDataPlace = self.allDataPlaceDe
+            
+        }else{
+            print("logOut")
+        }
+        
     }
+        
     
     func addspanner() {
         spanner = UIActivityIndicatorView()

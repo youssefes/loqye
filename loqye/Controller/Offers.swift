@@ -18,13 +18,13 @@ class Offers: UIViewController {
             let view = CosmosView()
             
             view.settings.fillMode = .half
-            view.text = " التقيم :"
-            view.settings.textFont = UIFont(name: "Avenir", size: 17)!
+            view.text = "التقيم:"
+            view.settings.textFont = UIFont(name: "Avenir", size: 15)!
             view.settings.textColor = .black
-            view.settings.textMargin = 10
+            view.settings.textMargin = 0
             view.settings.updateOnTouch = false
             view.rating = retaing
-            view.settings.textMargin = 100
+            view.settings.textMargin = 5
             return view
         }
        return cosmosView

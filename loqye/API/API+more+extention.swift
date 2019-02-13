@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 extension API{
-    
+    /// to reservePlace
     class func reservePlace(name: String,phone: String, start_date :String, place_id : Int , end_date : String,firebaseToken:String, complation:@escaping (_ success:Bool,_ massage : String?)->Void){
         
         let parameters : Parameters = [
@@ -105,42 +105,42 @@ extension API{
         }
     }
     
-    
+    /// to get FAQ
     class func getFaq(complation : @escaping (_ success : Bool,_ datafaq : [Datafaq]?)-> Void){
         
-        
-        Alamofire.request(FAQURL).responseJSON { (respond) in
+        Alamofire.request(FAQURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (respond) in
+            
             switch respond.result{
-                
             case .failure(let error):
-                complation(false,nil)
                 print(error)
+                complation(false, nil)
+                
             case .success(let value):
+               
                 let json = JSON(value)
-                guard let Alldata = json["data"].array else{
+                 print(json)
+                guard let data = json["data"].array else {
                     return
                 }
                 var arrayData = [Datafaq]()
-                for data in Alldata {
-                    guard let dataValue = data.dictionary else {
+                for alldata in data {
+                    guard let title = alldata["title"].string else {
+                        return
+                    }
+                   
+                    guard let details = alldata["details"].string else{
                         return
                     }
                     
-                    guard let title = dataValue["title"]?.stringValue else{
-                        return
-                    }
-                    guard let dateils = dataValue["details"]?.stringValue else {
-                        return
-                    }
+                    let dataFraq = Datafaq(title: title, details: details)
                     
-                    let dataF = Datafaq.init(title: title, details: dateils)
-                    print(dataF)
-                    arrayData.append(dataF)
+                    arrayData.append(dataFraq)
+                    
                 }
                 complation(true, arrayData)
             }
+           
         }
-        
     }
     
     /// Our contacts
@@ -174,6 +174,61 @@ extension API{
             }
             
         }
+    }
+    
+    
+    /// to get all reservations
+    
+    class func get_MyReservations(token: String, complation: @escaping (_ success:Bool,_ my_ReseData:[my_reservationModel]? )->Void){
+        
+        
+        
+        /// using API Of Loque to get ALlresarvations of user
+//        let url = "https://luqia.net/api/user-reservations/0x6000021736c0"
+//        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+//            switch response.result{
+//            case .failure(let error) :
+//                print(error)
+//                complation(false,nil)
+//            case .success(let value):
+//                let json = JSON(value)
+//
+//                guard let data = json["data"].array else {
+//                    return
+//                }
+//
+//                var  allMyResData = [my_reservationModel]()
+//                for allData in data{
+//                    guard let dataRe = allData["place"].dictionary else {
+//                        return
+//                    }
+//                    guard let startDate = allData["start_date"].string else {
+//                        return
+//                    }
+//
+//                    guard let end_date = allData["end_date"].string else {
+//                        return
+//                    }
+//
+//                    guard let imagesPath = allData["imagesPath"].string else {
+//                        return
+//                    }
+//
+//                    guard let title = dataRe["title"]?.string, let price = dataRe["price"]?.int, let rating = dataRe["rating"]?.int, let id = dataRe["id"]?.int, let imageUrl = dataRe["image"]?.string else{
+//                        return
+//                    }
+//
+//                    let dataPlaceRe = my_reservationModel(title: title, price: price, id: id, rating: rating, image: imageUrl, imagePath: imagesPath, endDate: end_date, startDate: startDate)
+//                    allMyResData.append(dataPlaceRe)
+//                    complation(true,allMyResData)
+//                }
+//            }
+//
+//        }
+//
+//
+        
+        
     }
 }
 

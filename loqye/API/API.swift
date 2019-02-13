@@ -14,7 +14,7 @@ class API: NSObject {
     
     
     
-    // to search by place_name
+    /// to search by place_name
     
     class func search_By_place(name : String, complation: @escaping (_ success : Bool, _ data_from_search:[dataByName]?)->Void){
         
@@ -61,13 +61,10 @@ class API: NSObject {
     }
     
     
-    // to get departments
+    /// to get departments
     
     class func department(complation:@escaping (_ error : Error? , [Departs]?)->Void){
-        
-        
-        
-        
+   
         Alamofire.request(DEPARTMENT, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200..<300).responseJSON { (respond) in
             switch respond.result{
             case .failure(let error):
@@ -98,16 +95,7 @@ class API: NSObject {
         }
     }
     
-    /* {
-    "id": 2,
-    "title": "قاعة الملكة",
-    "image": "LoHMW.background.jpg",
-    "rating": 3,
-    "imagesPath": "https://luqia.net/upload/places/"
-}
-  */
-    
-    // get place details
+    /// get place details
     
     class func get_Place_by_id(places_id: Int, complation : @escaping (_ succes: Bool, _ data : placeDetails?)-> Void){
         
@@ -133,15 +121,12 @@ class API: NSObject {
                 }
                     
                     
-                    guard let name = place["title"]?.stringValue else{
-                        return
-                    }
-                    guard let id = place["id"]?.int else{
-                        return
-                    }
-                    guard let rating = place["rating"]?.int else{
-                        return
-                    }
+                    let name = place["title"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                print(name)
+                     let id = place["id"]?.int ?? 0
+                        
+                    
+                    let rating = place["rating"]?.int ?? 0
                     guard let imagepath = place["imagesPath"]?.stringValue else{
                             return
                         }
@@ -151,29 +136,20 @@ class API: NSObject {
                     guard let detailes = place["details"]?.stringValue else {
                         return
                     }
-                    guard let price = place["price"]?.int else{
-                        return
-                    }
-                    guard let area = place["area"]?.stringValue else{
-                        return
-                    }
-                    guard let availiable = place["availiable"]?.stringValue else{
-                        return
-                    }
-                    guard let rooms = place["rooms"]?.stringValue else{
-                        return
-                    }
-                    guard let workers = place["workers"]?.stringValue else{
-                        return
-                    }
+                    let price = place["price"]?.int ?? 0
+            
                     
-                    guard let address = place["address"]?.stringValue else{
-                        return
-                    }
+                    let area = place["area"]?.stringValue ?? "لا يوجد بيانات"
+                    let availiable = place["availiable"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                       
+                    let rooms = place["rooms"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                    print(rooms)
+                   let workers = place["workers"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                    print(workers)
+                    let address = place["address"]?.stringValue ?? "لا يوجد بيانات لعرضها"
                     
-                    guard let chairs = place["chairs"]?.stringValue else{
-                        return
-                    }
+                    let chairs = place["chairs"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                print(chairs)
                     guard let images = place["images"]?.array else{
                         return
                     }
@@ -182,18 +158,6 @@ class API: NSObject {
                         let image = "\(imageess["image"].stringValue)"
                         let imageURL = imagepath+image
                         imaggess.append(imageURL)
-//                    API.get_Image(imagePath: imagepath, imageUrl: imageess["image"].stringValue, complation: { (images:UIImage?) in
-//                        guard let image = images else{
-//                            return
-//                        }
-//                        DispatchQueue.main.async(execute: {
-//
-//                            imaggess.append(image)
-//
-//                        })
-//
-//                        print(imaggess)
-//                    })
                         print(imaggess)
                 }
                     API.get_Image(imagePath: imagepath, imageUrl: imagename, complation: { (imagePlace:UIImage?) in
@@ -213,7 +177,7 @@ class API: NSObject {
         
     }
 
-    // to get all places
+    /// to get all places
     
     class func get_all_Places(place_id : Int, complation : @escaping (_ seccess :Bool, _ data: [places_data]?)->Void){
         
@@ -271,13 +235,7 @@ class API: NSObject {
                         })
                         
                     }
-                    
-                    
-                
-                    
                 }
-            
-            
             }
             
         }
@@ -328,7 +286,7 @@ class API: NSObject {
         
     }
 }
-    
+    /// downlaod images
     class func get_Image(imagePath : String ,imageUrl : String, complation:@escaping ( _ image : UIImage?)->Void){
         /*
         // using URlSession

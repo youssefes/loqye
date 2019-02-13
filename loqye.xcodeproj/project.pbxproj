@@ -31,6 +31,7 @@
 		6766FE6021FBCC430069B543 /* costomerOpenionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766FE5F21FBCC430069B543 /* costomerOpenionVC.swift */; };
 		6766FE6221FBCDA70069B543 /* customerOpenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766FE6121FBCDA70069B543 /* customerOpenion.swift */; };
 		6766FE6421FBCF940069B543 /* openine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766FE6321FBCF940069B543 /* openine.swift */; };
+		6776915A221106000025582A /* my_Reservations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67769159221106000025582A /* my_Reservations.swift */; };
 		6777DFBF21DD948600EEC0D2 /* circilImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777DFBE21DD948600EEC0D2 /* circilImage.swift */; };
 		67843C2A21D53F5200987824 /* searchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67843C2921D53F5200987824 /* searchResult.swift */; };
 		67843C3021D5447600987824 /* ResultCellSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67843C2F21D5447600987824 /* ResultCellSearch.swift */; };
@@ -40,9 +41,12 @@
 		679D4CE121D411B00000546F /* placesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D4CE021D411B00000546F /* placesData.swift */; };
 		679D4CE321D43B480000546F /* addImageAndPading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D4CE221D43B480000546F /* addImageAndPading.swift */; };
 		679D4CE521D445320000546F /* data_From_Search_by_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D4CE421D445320000546F /* data_From_Search_by_name.swift */; };
+		67ABEE48221468BE002488EB /* createEmailToReservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ABEE47221468BE002488EB /* createEmailToReservation.swift */; };
 		67B7A5862203D5BD00CD65DA /* reservePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7A5852203D5BD00CD65DA /* reservePlace.swift */; };
 		67B7A58C2203E31A00CD65DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67B7A58B2203E31A00CD65DA /* GoogleService-Info.plist */; };
 		67D3DB0E21EE708B007FABE8 /* showDatielsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3DB0D21EE708B007FABE8 /* showDatielsVC.swift */; };
+		67D8D33122135842006CC528 /* my_reservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D8D33022135842006CC528 /* my_reservationCell.swift */; };
+		67D8D33322135C84006CC528 /* My_reservationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D8D33222135C84006CC528 /* My_reservationData.swift */; };
 		67E095A021FAD90500D9BE22 /* contectUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E0959F21FAD90500D9BE22 /* contectUS.swift */; };
 		67E778C521D6DCE500F4B409 /* offersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E778C421D6DCE500F4B409 /* offersData.swift */; };
 		67E8521F21F5FAD10096351E /* showplaceresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E8521E21F5FAD10096351E /* showplaceresult.swift */; };
@@ -79,6 +83,7 @@
 		6766FE5F21FBCC430069B543 /* costomerOpenionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = costomerOpenionVC.swift; sourceTree = "<group>"; };
 		6766FE6121FBCDA70069B543 /* customerOpenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customerOpenion.swift; sourceTree = "<group>"; };
 		6766FE6321FBCF940069B543 /* openine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openine.swift; sourceTree = "<group>"; };
+		67769159221106000025582A /* my_Reservations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_Reservations.swift; sourceTree = "<group>"; };
 		6777DFBE21DD948600EEC0D2 /* circilImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circilImage.swift; sourceTree = "<group>"; };
 		67843C2921D53F5200987824 /* searchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResult.swift; sourceTree = "<group>"; };
 		67843C2F21D5447600987824 /* ResultCellSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCellSearch.swift; sourceTree = "<group>"; };
@@ -88,9 +93,12 @@
 		679D4CE021D411B00000546F /* placesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesData.swift; sourceTree = "<group>"; };
 		679D4CE221D43B480000546F /* addImageAndPading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addImageAndPading.swift; sourceTree = "<group>"; };
 		679D4CE421D445320000546F /* data_From_Search_by_name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data_From_Search_by_name.swift; sourceTree = "<group>"; };
+		67ABEE47221468BE002488EB /* createEmailToReservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createEmailToReservation.swift; sourceTree = "<group>"; };
 		67B7A5852203D5BD00CD65DA /* reservePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reservePlace.swift; sourceTree = "<group>"; };
 		67B7A58B2203E31A00CD65DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67D3DB0D21EE708B007FABE8 /* showDatielsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showDatielsVC.swift; sourceTree = "<group>"; };
+		67D8D33022135842006CC528 /* my_reservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_reservationCell.swift; sourceTree = "<group>"; };
+		67D8D33222135C84006CC528 /* My_reservationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_reservationData.swift; sourceTree = "<group>"; };
 		67E0959F21FAD90500D9BE22 /* contectUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contectUS.swift; sourceTree = "<group>"; };
 		67E778C421D6DCE500F4B409 /* offersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offersData.swift; sourceTree = "<group>"; };
 		67E8521E21F5FAD10096351E /* showplaceresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showplaceresult.swift; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 				6766FE5F21FBCC430069B543 /* costomerOpenionVC.swift */,
 				67B7A5852203D5BD00CD65DA /* reservePlace.swift */,
 				670B9311220E33B2006C84BD /* faqVC.swift */,
+				67769159221106000025582A /* my_Reservations.swift */,
+				67ABEE47221468BE002488EB /* createEmailToReservation.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -150,6 +160,7 @@
 				6766FE6121FBCDA70069B543 /* customerOpenion.swift */,
 				6756215521FCE85500291D15 /* sliderCell.swift */,
 				670B9315220E3EED006C84BD /* faqCell.swift */,
+				67D8D33022135842006CC528 /* my_reservationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +231,7 @@
 				6766FE6321FBCF940069B543 /* openine.swift */,
 				670B930F220E2870006C84BD /* Datafaq.swift */,
 				670B9313220E35A6006C84BD /* contacts.swift */,
+				67D8D33222135C84006CC528 /* My_reservationData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -317,6 +329,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -328,6 +341,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +390,7 @@
 				67843C2A21D53F5200987824 /* searchResult.swift in Sources */,
 				670B9314220E35A6006C84BD /* contacts.swift in Sources */,
 				6766FE5E21FB9E0E0069B543 /* API+more+extention.swift in Sources */,
+				6776915A221106000025582A /* my_Reservations.swift in Sources */,
 				6755D43B21CD91D000215209 /* placeDetails.swift in Sources */,
 				67B7A5862203D5BD00CD65DA /* reservePlace.swift in Sources */,
 				6751A7BD21B8093700E45D82 /* mainVC.swift in Sources */,
@@ -387,13 +402,16 @@
 				67E8521F21F5FAD10096351E /* showplaceresult.swift in Sources */,
 				6755D43521CD7CAD00215209 /* API.swift in Sources */,
 				6766FE6021FBCC430069B543 /* costomerOpenionVC.swift in Sources */,
+				67D8D33122135842006CC528 /* my_reservationCell.swift in Sources */,
 				67E778C521D6DCE500F4B409 /* offersData.swift in Sources */,
 				67D3DB0E21EE708B007FABE8 /* showDatielsVC.swift in Sources */,
 				671E553521C98EE10082C0A1 /* searchByHell.swift in Sources */,
 				679D4CE121D411B00000546F /* placesData.swift in Sources */,
 				679D4CE521D445320000546F /* data_From_Search_by_name.swift in Sources */,
+				67ABEE48221468BE002488EB /* createEmailToReservation.swift in Sources */,
 				6777DFBF21DD948600EEC0D2 /* circilImage.swift in Sources */,
 				6755D43821CD7CFD00215209 /* Urls.swift in Sources */,
+				67D8D33322135C84006CC528 /* My_reservationData.swift in Sources */,
 				6766FE6421FBCF940069B543 /* openine.swift in Sources */,
 				678EAC1921D0280F00BF76A8 /* offerCell.swift in Sources */,
 			);

@@ -52,6 +52,7 @@ extension faqVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "faqCell", for: indexPath) as? faqCell {
+            print(allArrayData[indexPath.row].title)
             cell.titleLbl.text = allArrayData[indexPath.row].title
             cell.detailsLbl.text = allArrayData[indexPath.row].details
             return cell

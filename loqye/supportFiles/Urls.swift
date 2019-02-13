@@ -33,4 +33,3 @@ let FAQURL = "\(MAIN_URL)faq"
 /// url our-contacts
 
 let OUR_CONTACTS = "\(MAIN_URL)our-contacts"
-
