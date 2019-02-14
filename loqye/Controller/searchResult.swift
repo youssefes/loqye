@@ -105,8 +105,12 @@ extension searchResult : UICollectionViewDataSource{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! showDatielsVC
-        vc.id = self.id
+        if  let vc = segue.destination as? showDatielsVC {
+             vc.id = self.id
+        }else{
+            print("no showDetailes")
+        }
+       
     }
 }
 

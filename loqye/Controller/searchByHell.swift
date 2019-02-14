@@ -35,8 +35,12 @@ class searchByHell: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! searchResult
-        vc.text = self.textFiledText
+        if let vc = segue.destination as? searchResult {
+             vc.text = self.textFiledText
+        }else{
+            print("done")
+        }
+       
     }
     
   

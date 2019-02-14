@@ -34,24 +34,31 @@ class API: NSObject {
                
                
                 if let databyname = data["data"].array{
-                    for datasearch in databyname{
-                        guard let datafromarr = datasearch.dictionary else{
-                            return
-                        }
-                        guard let id = datafromarr["id"]?.int,  let title = datafromarr["title"]?.string, let image = datafromarr["image"]?.string,let imagePath = datafromarr["imagesPath"]?.string
-                            else
-                        {
-                                
-                            return
-                        }
-                        print(title,id, image, imagePath)
-                        get_Image(imagePath: imagePath, imageUrl: image, complation: { (image:UIImage?) in
-                            
-                            let alldata_search = dataByName(title: title, id: id, image: image! )
-                            array_of_data.append(alldata_search)
-                            complation(true, array_of_data)
-                        })
+                    
+                    if databyname.isEmpty{
+                        complation(true,array_of_data)
                     }
+                    else{
+                        for datasearch in databyname{
+                            guard let datafromarr = datasearch.dictionary else{
+                                return
+                            }
+                            guard let id = datafromarr["id"]?.int,  let title = datafromarr["title"]?.string, let image = datafromarr["image"]?.string,let imagePath = datafromarr["imagesPath"]?.string
+                                else
+                            {
+                                
+                                return
+                            }
+                            print(title,id, image, imagePath)
+                            get_Image(imagePath: imagePath, imageUrl: image, complation: { (image:UIImage?) in
+                                
+                                let alldata_search = dataByName(title: title, id: id, image: image! )
+                                array_of_data.append(alldata_search)
+                                complation(true, array_of_data)
+                            })
+                        }
+                    }
+                    
                 }else{
                     complation(false,nil)
                 }

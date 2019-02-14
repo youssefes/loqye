@@ -26,6 +26,7 @@ class Home: UIViewController {
         
         addspanner()
         handeledData()
+        
     }
     
     func handeledData(){
@@ -39,12 +40,13 @@ class Home: UIViewController {
             for department in departs{
                 self.allPlaces.append(department)
                 print(self.allPlaces)
+
                 self.tableViewDepart.reloadData()
-                
             }
+            self.removerspanner()
         }
-        print("done")
-        self.removerspanner()
+        self.tableViewDepart.isHidden = false
+       
         
     }
 
