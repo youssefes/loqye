@@ -37,8 +37,7 @@ class reservePlace: UIViewController {
                 guard let message = message else{
                     return
                 }
-                
-                self.saveDataInDatabase(stratDate: "\(start)", endDate: "\(end)")
+
                 let alert = UIAlertController(title: "success", message: message, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (UIAlertAction) in
                     
@@ -48,32 +47,6 @@ class reservePlace: UIViewController {
             }
         }
     
-    }
-    
-
-    
-    func saveDataInDatabase(stratDate: String, endDate :String)  {
-        guard let UId = Auth.auth().currentUser?.uid else{
-            return
-        }
-        
-        guard let allDataPlaces = allDataPlace else {
-            return
-        }
-        let refData = Database.database().reference()
-        let userRefrence = refData.child("user_Reservation").child(UId).child(allDataPlaces.title)
-       
-        guard let value = ["start_Date" : startDate, "end_Date" : endDate, "id" : allDataPlaces.id , "rating" : allDataPlaces.rating , "preis" : allDataPlaces.price, "title" : allDataPlaces.title] as? [String : AnyClass] else {
-            return
-        }
-        userRefrence.updateChildValues(value) { (error, databaseRe) in
-            if let erro = error{
-                print(erro)
-            }else{
-                
-            }
-        }
-        
     }
     
     @IBAction func reserveNewbtn(_ sender: Any) {

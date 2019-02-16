@@ -182,51 +182,53 @@ extension API{
     class func get_MyReservations(token: String, complation: @escaping (_ success:Bool,_ my_ReseData:[my_reservationModel]? )->Void){
         
         
-        
+        print(token)
         /// using API Of Loque to get ALlresarvations of user
-//        let url = "https://luqia.net/api/user-reservations/0x6000021736c0"
-//        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
-//            switch response.result{
-//            case .failure(let error) :
-//                print(error)
-//                complation(false,nil)
-//            case .success(let value):
-//                let json = JSON(value)
-//
-//                guard let data = json["data"].array else {
-//                    return
-//                }
-//
-//                var  allMyResData = [my_reservationModel]()
-//                for allData in data{
-//                    guard let dataRe = allData["place"].dictionary else {
-//                        return
-//                    }
-//                    guard let startDate = allData["start_date"].string else {
-//                        return
-//                    }
-//
-//                    guard let end_date = allData["end_date"].string else {
-//                        return
-//                    }
-//
-//                    guard let imagesPath = allData["imagesPath"].string else {
-//                        return
-//                    }
-//
-//                    guard let title = dataRe["title"]?.string, let price = dataRe["price"]?.int, let rating = dataRe["rating"]?.int, let id = dataRe["id"]?.int, let imageUrl = dataRe["image"]?.string else{
-//                        return
-//                    }
-//
-//                    let dataPlaceRe = my_reservationModel(title: title, price: price, id: id, rating: rating, image: imageUrl, imagePath: imagesPath, endDate: end_date, startDate: startDate)
-//                    allMyResData.append(dataPlaceRe)
-//                    complation(true,allMyResData)
-//                }
-//            }
-//
-//        }
-//
-//
+        let url = "https://luqia.net/api/user-reservations/\(token)"
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result{
+            case .failure(let error) :
+                print(error)
+                complation(false,nil)
+            case .success(let value):
+                let json = JSON(value)
+
+                print(json)
+                guard let data = json["data"].array else {
+                    return
+                }
+
+                var  allMyResData = [my_reservationModel]()
+                for allData in data{
+                    guard let dataRe = allData["place"].dictionary else {
+                        return
+                    }
+                    guard let startDate = allData["start_date"].string else {
+                        return
+                    }
+
+                    guard let end_date = allData["end_date"].string else {
+                        return
+                    }
+
+                    guard let imagesPath = allData["imagesPath"].string else {
+                        return
+                    }
+
+                    guard let title = dataRe["title"]?.string, let price = dataRe["price"]?.int, let rating = dataRe["rating"]?.int, let id = dataRe["id"]?.int, let imageUrl = dataRe["image"]?.string else{
+                        return
+                    }
+
+                    let dataPlaceRe = my_reservationModel(title: title, price: price, id: id, rating: rating, image: imageUrl, imagePath: imagesPath, endDate: end_date, startDate: startDate)
+                    allMyResData.append(dataPlaceRe)
+                    print(allMyResData)
+                    complation(true,allMyResData)
+                }
+            }
+
+        }
+
+
         
         
     }

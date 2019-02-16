@@ -19,7 +19,6 @@ class searchResult: UIViewController {
 
     var text = ""
     var spanner : UIActivityIndicatorView?
-    @IBOutlet weak var lbl_no_result: UILabel!
     var screnSize = UIScreen.main.bounds
     @IBOutlet weak var collectionsearch: UICollectionView!
     var data = [dataByName]()
@@ -39,23 +38,30 @@ class searchResult: UIViewController {
         addspanner()
         API.search_By_place(name: self.text) { (success:Bool, data:[dataByName]?) in
             if success{
-                guard  let datase = data else{
+                guard let alldata = data else{
                     return
                 }
-                self.data = datase
-                self.removerspanner()
-                self.collectionsearch.reloadData()
-                
+                if  alldata.count > 0
+                {
+                    self.data = alldata
+                    self.removerspanner()
+                    self.collectionsearch.reloadData()
+                    
+                }else{
+                    let alert = UIAlertController(title: "تاكد من الاسم", message: "لا يوجد قاعه بهذا الاسم", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion:nil)
+                    self.dismiss(animated: true, completion: nil)
+                    self.removerspanner()
+                }
             }else{
-                self.lbl_no_result.isHidden = false
-                self.lbl_no_result.text = "حدث مشكلة ما تاكد من وجود الانترنت"
                 self.collectionsearch.isHidden = true
                 self.removerspanner()
-            }
-            if self.data.count == 0{
-                self.lbl_no_result.isHidden = false
-                self.collectionsearch.isHidden = true
-                self.removerspanner()
+                let alert = UIAlertController(title: "error", message: "therr is some problem with conection", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+                
             }
             
         }

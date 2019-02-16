@@ -13,7 +13,6 @@
 		670B9312220E33B2006C84BD /* faqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670B9311220E33B2006C84BD /* faqVC.swift */; };
 		670B9314220E35A6006C84BD /* contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670B9313220E35A6006C84BD /* contacts.swift */; };
 		670B9316220E3EED006C84BD /* faqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670B9315220E3EED006C84BD /* faqCell.swift */; };
-		671E553321C98EC10082C0A1 /* searchByData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671E553221C98EC10082C0A1 /* searchByData.swift */; };
 		671E553521C98EE10082C0A1 /* searchByHell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671E553421C98EE10082C0A1 /* searchByHell.swift */; };
 		671E553B21C9A00C0082C0A1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671E553A21C9A00C0082C0A1 /* Home.swift */; };
 		674A209321BAC5D80038ACC9 /* btnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A209221BAC5D80038ACC9 /* btnView.swift */; };
@@ -63,7 +62,6 @@
 		670B9311220E33B2006C84BD /* faqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faqVC.swift; sourceTree = "<group>"; };
 		670B9313220E35A6006C84BD /* contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacts.swift; sourceTree = "<group>"; };
 		670B9315220E3EED006C84BD /* faqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faqCell.swift; sourceTree = "<group>"; };
-		671E553221C98EC10082C0A1 /* searchByData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchByData.swift; sourceTree = "<group>"; };
 		671E553421C98EE10082C0A1 /* searchByHell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchByHell.swift; sourceTree = "<group>"; };
 		671E553A21C9A00C0082C0A1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		674A209221BAC5D80038ACC9 /* btnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = btnView.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		671E553121C98E710082C0A1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				671E553221C98EC10082C0A1 /* searchByData.swift */,
 				671E553421C98EE10082C0A1 /* searchByHell.swift */,
 				671E553A21C9A00C0082C0A1 /* Home.swift */,
 				6751A7BC21B8093700E45D82 /* mainVC.swift */,
@@ -386,7 +383,6 @@
 				670B9312220E33B2006C84BD /* faqVC.swift in Sources */,
 				678EAC1B21D02C3E00BF76A8 /* Offers.swift in Sources */,
 				670B9310220E2871006C84BD /* Datafaq.swift in Sources */,
-				671E553321C98EC10082C0A1 /* searchByData.swift in Sources */,
 				67843C2A21D53F5200987824 /* searchResult.swift in Sources */,
 				670B9314220E35A6006C84BD /* contacts.swift in Sources */,
 				6766FE5E21FB9E0E0069B543 /* API+more+extention.swift in Sources */,

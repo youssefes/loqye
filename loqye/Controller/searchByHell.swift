@@ -18,14 +18,7 @@ class searchByHell: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-   
-    
-   
-    @IBAction func btnShowSearchByData(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+    }   
     @IBAction func btnSearchByName(_ sender: Any) {
         guard let text = txtField.text, !text.isEmpty else {
             return

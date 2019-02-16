@@ -25,33 +25,35 @@ class my_Reservations: UIViewController {
     }
     
     func handelReservationData(){
-        
-        
-    /// Using my firebase
-        
-        
-        
-        
 /// using API fireBase of Loqya
         
+        if  let Uid  = Auth.auth().currentUser?.uid
+        {
+            API.get_MyReservations(token: Uid) { (success:Bool, allData:[my_reservationModel]?) in
+                if success{
+                    guard let reservationData = allData else {
+                        return
+                    }
+                    self.allReservationData = reservationData
+                    
+                    print(self.allReservationData)
+                    
+                    DispatchQueue.main.async(execute: {
+                        self.collectionViewReservation.reloadData()
+                        
+                    })
+                    
+                }
+                
+            }
+            
+        }else {
+            print("you should login")
+        }
         
-//        API.get_MyReservations(token: "0x6000021736c0") { (success:Bool, allData:[my_reservationModel]?) in
-//            if success{
-//                guard let reservationData = allData else {
-//                    return
-//                }
-//                self.allReservationData = reservationData
-//
-//                DispatchQueue.main.async(execute: {
-//                    self.collectionViewReservation.reloadData()
-//
-//                })
-//
-//
-//}
-//}
     }
-    // create view of cosmon Rating
+    
+    /// create view of cosmon Rating
     fileprivate func cosmonView (retaing : Double ) -> CosmosView {
         var cosmosView : CosmosView{
             let view = CosmosView()
@@ -81,11 +83,12 @@ extension my_Reservations : UICollectionViewDataSource{
             cell.nameLbl.text = allReservationData[indexPath.row].title
             cell.endDateLbl.text = allReservationData[indexPath.row].endDate
             cell.startDetalbl.text = allReservationData[indexPath.row].startDate
-            //this is with loqy api let ImagePath = allReservationData[indexPath.row].imagePath
+            let ImagePath = allReservationData[indexPath.row].imagePath
             let imageName = allReservationData[indexPath.row].image
-            
-            //this is with loqy api  let UrlImage = URL(string: "\(ImagePath)\(imageName)")
-                 cell.imagePlace.kf.setImage(with: URL(string: "hjkk"))
+            let defaultImage = UIImage(named: "imd")
+            let UrlImage = URL(string: "\(ImagePath)\(imageName)")
+                cell.imagePlace.kf.setImage(with: UrlImage, placeholder: defaultImage, options: nil, progressBlock: nil, completionHandler: nil)
+
             cell.priceLbl.text = "\(allReservationData[indexPath.row].price)"
             
             
