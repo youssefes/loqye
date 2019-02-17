@@ -32,21 +32,27 @@ class Home: UIViewController {
     func handeledData(){
         
         API.department { (error:Error?, departments:[Departs]?) in
-            
-            guard let departs = departments else {
-                return
+            if error != nil{
+                let alert = UIAlertController(title: "خطا", message: "هناك مشكله في اتصال الانترنت", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else{
+                guard let departs = departments else {
+                    return
+                }
+                
+                for department in departs{
+                    self.allPlaces.append(department)
+                    print(self.allPlaces)
+                    
+                    self.tableViewDepart.reloadData()
+                }
+                self.removerspanner()
             }
+            self.tableViewDepart.isHidden = false
             
-            for department in departs{
-                self.allPlaces.append(department)
-                print(self.allPlaces)
-
-                self.tableViewDepart.reloadData()
             }
-            self.removerspanner()
-        }
-        self.tableViewDepart.isHidden = false
-       
+           
         
     }
 

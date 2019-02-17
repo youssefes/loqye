@@ -57,7 +57,7 @@ class searchResult: UIViewController {
             }else{
                 self.collectionsearch.isHidden = true
                 self.removerspanner()
-                let alert = UIAlertController(title: "error", message: "therr is some problem with conection", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "خطا", message: "هناك مشكله في اتصال الانترنت", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 

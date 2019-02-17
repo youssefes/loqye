@@ -193,37 +193,45 @@ extension API{
             case .success(let value):
                 let json = JSON(value)
 
-                print(json)
-                guard let data = json["data"].array else {
-                    return
+               var  allMyResData = [my_reservationModel]()
+                if let data = json["data"].array {
+                    if data.count > 0 {
+                        
+                        for allData in data{
+                            guard let dataRe = allData["place"].dictionary else {
+                                return
+                            }
+                            guard let startDate = allData["start_date"].string else {
+                                return
+                            }
+                            
+                            guard let end_date = allData["end_date"].string else {
+                                return
+                            }
+                            
+                            guard let imagesPath = allData["imagesPath"].string else {
+                                return
+                            }
+                            
+                            guard let title = dataRe["title"]?.string, let price = dataRe["price"]?.int, let rating = dataRe["rating"]?.int, let id = dataRe["id"]?.int, let imageUrl = dataRe["image"]?.string else{
+                                return
+                            }
+                            
+                            let dataPlaceRe = my_reservationModel(title: title, price: price, id: id, rating: rating, image: imageUrl, imagePath: imagesPath, endDate: end_date, startDate: startDate)
+                            allMyResData.append(dataPlaceRe)
+                            print(allMyResData)
+                            complation(true,allMyResData)
+                        }
+                    }else{
+                        complation(true, allMyResData)
+                    }
+                   
+                    
+                }else{
+                    complation(false, nil)
                 }
 
-                var  allMyResData = [my_reservationModel]()
-                for allData in data{
-                    guard let dataRe = allData["place"].dictionary else {
-                        return
-                    }
-                    guard let startDate = allData["start_date"].string else {
-                        return
-                    }
-
-                    guard let end_date = allData["end_date"].string else {
-                        return
-                    }
-
-                    guard let imagesPath = allData["imagesPath"].string else {
-                        return
-                    }
-
-                    guard let title = dataRe["title"]?.string, let price = dataRe["price"]?.int, let rating = dataRe["rating"]?.int, let id = dataRe["id"]?.int, let imageUrl = dataRe["image"]?.string else{
-                        return
-                    }
-
-                    let dataPlaceRe = my_reservationModel(title: title, price: price, id: id, rating: rating, image: imageUrl, imagePath: imagesPath, endDate: end_date, startDate: startDate)
-                    allMyResData.append(dataPlaceRe)
-                    print(allMyResData)
-                    complation(true,allMyResData)
-                }
+               
             }
 
         }

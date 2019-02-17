@@ -85,7 +85,7 @@ class showDatielsVC: UIViewController {
                     
                 }
                 else{
-                    let alert = UIAlertController(title: "error", message: "there are some problem with connection", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "خطا", message: "هناك مشكله في اتصال الانترنت", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { (UIAlertAction) in
                         self.dismiss(animated: true, completion: nil)
                     }))

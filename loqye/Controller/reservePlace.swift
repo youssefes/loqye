@@ -44,6 +44,12 @@ class reservePlace: UIViewController {
                 }))
                 self.present(alert, animated: true, completion: nil)
         
+                self.endDate.text = ""
+                self.startDate.text = ""
+                self.phonetxt.text = ""
+                self.nametxt.text = ""
+            
+                
             }
         }
     

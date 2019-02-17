@@ -31,11 +31,17 @@ class my_Reservations: UIViewController {
         {
             API.get_MyReservations(token: Uid) { (success:Bool, allData:[my_reservationModel]?) in
                 if success{
-                    guard let reservationData = allData else {
-                        return
+                    if let allDataraser = allData {
+                        if allDataraser.count > 0 {
+                            self.allReservationData = allDataraser
+                        }else{
+                            let alert = UIAlertController(title: "لا يوجد بيانات", message: "لا يوجد اي حجزات تم حجزها", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "الغاء", style: .cancel, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
                     }
-                    self.allReservationData = reservationData
                     
+                    }
+                   
                     print(self.allReservationData)
                     
                     DispatchQueue.main.async(execute: {
@@ -43,12 +49,22 @@ class my_Reservations: UIViewController {
                         
                     })
                     
+                }else{
+                    let alert = UIAlertController(title: "خطا", message: "هناك مشكله في اتصال الانترنت", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
                 
             }
             
         }else {
-            print("you should login")
+           let alert = UIAlertController(title: "انشاء حساب ", message: "يجب عليك انشاء حساب لكي تحجز اي فاعه او استراحه وتري حجزاتك", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "انشاء حساب", style: .default, handler: { (action) in
+               
+                self.performSegue(withIdentifier: "createmail", sender: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "الغاء", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
     }
