@@ -101,6 +101,11 @@
 		67E778C421D6DCE500F4B409 /* offersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offersData.swift; sourceTree = "<group>"; };
 		67E8521E21F5FAD10096351E /* showplaceresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showplaceresult.swift; sourceTree = "<group>"; };
 		67E8522021F5FD7B0096351E /* allPlacesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allPlacesCell.swift; sourceTree = "<group>"; };
+		67FD6192221EBED000087E44 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		67FD6193221EBED000087E44 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
+		67FD6194221EBED000087E44 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		67FD6195221EBED100087E44 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		67FD6196221EBED200087E44 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		6DC4DA547DD66AB922B0FD34 /* Pods-loqye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loqye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loqye/Pods-loqye.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +127,18 @@
 				0D5D1523DD0E8585C00A2574 /* Pods_loqye.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6712105A221DBE0200B024AF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				67FD6194221EBED000087E44 /* Cairo-Black.ttf */,
+				67FD6195221EBED100087E44 /* Cairo-Bold.ttf */,
+				67FD6192221EBED000087E44 /* Cairo-ExtraLight.ttf */,
+				67FD6193221EBED000087E44 /* Cairo-Light.ttf */,
+				67FD6196221EBED200087E44 /* Cairo-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		671E553121C98E710082C0A1 /* Controller */ = {
@@ -183,6 +200,7 @@
 		6751A7B921B8093700E45D82 /* loqye */ = {
 			isa = PBXGroup;
 			children = (
+				6712105A221DBE0200B024AF /* Fonts */,
 				6755D43621CD7CDF00215209 /* supportFiles */,
 				6755D43321CD7C8F00215209 /* API */,
 				6755D43921CD91A600215209 /* model */,
@@ -323,6 +341,7 @@
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
@@ -335,6 +354,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",

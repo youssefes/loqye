@@ -35,7 +35,11 @@ class createEmailToReservation: UIViewController {
             if let error = error {
                 print(error)
             }else{
-                self.performSegue(withIdentifier: "logindone", sender: nil)
+                guard let user = user else{
+                    return
+                }
+                print(user.user)
+                self.dismiss(animated: true, completion: nil)
             }
             
         })

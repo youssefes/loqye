@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@IBDesignable
+
 class addImageAndPading: UITextField {
 
     @IBInspectable var imageRight : UIImage?{

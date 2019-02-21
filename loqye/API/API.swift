@@ -116,7 +116,6 @@ class API: NSObject {
                 print("error get place \(error)")
                 complation(false, nil)
             case .success(let value):
-                var allplacesAr = [placeDetails]()
                 let json = JSON(value)
                 
                 guard let allplaces = json.dictionary else{
@@ -128,7 +127,7 @@ class API: NSObject {
                 }
                     
                     
-                    let name = place["title"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                    let name = place["title"]?.stringValue ?? ""
                 print(name)
                      let id = place["id"]?.int ?? 0
                         
@@ -146,16 +145,16 @@ class API: NSObject {
                     let price = place["price"]?.int ?? 0
             
                     
-                    let area = place["area"]?.stringValue ?? "لا يوجد بيانات"
-                    let availiable = place["availiable"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                    let area = place["area"]?.stringValue ?? ""
+                    let availiable = place["availiable"]?.stringValue ?? ""
                        
-                    let rooms = place["rooms"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                    let rooms = place["rooms"]?.stringValue ?? ""
                     print(rooms)
-                   let workers = place["workers"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                   let workers = place["workers"]?.stringValue ?? ""
                     print(workers)
-                    let address = place["address"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                    let address = place["address"]?.stringValue ?? ""
                     
-                    let chairs = place["chairs"]?.stringValue ?? "لا يوجد بيانات لعرضها"
+                    let chairs = place["chairs"]?.stringValue ?? ""
                 print(chairs)
                     guard let images = place["images"]?.array else{
                         return

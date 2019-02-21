@@ -36,9 +36,6 @@ class costomerOpenionVC: UIViewController {
         }
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
     @IBAction func backbtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -71,8 +68,11 @@ extension costomerOpenionVC : UITableViewDataSource {
         cell.openionlbl.text = openiens[indexPath.row].openines
         return cell
     }
+    
    
 }
 extension costomerOpenionVC : UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }

@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class btnView: UIButton {
 
     @IBInspectable var corner_Reduis : CGFloat = 0.0 {

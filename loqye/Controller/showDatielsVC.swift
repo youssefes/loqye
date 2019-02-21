@@ -11,6 +11,7 @@ import Kingfisher
 import Firebase
 class showDatielsVC: UIViewController {
 
+    var ifIsEmptyText = "لا يوجد بيانات لعرضها"
     @IBOutlet weak var placeRule: UITextView!
     var id : Int = 0
     var spanner : UIActivityIndicatorView?
@@ -62,14 +63,37 @@ class showDatielsVC: UIViewController {
                     }
                     self.allDataPlaceDe = dataPlace
                     
-                    self.arealbl.text = dataPlace.area
-                    self.location.text = dataPlace.address
-                    self.avaliblelbl.text = dataPlace.availiable
-                    self.staflbl.text = dataPlace.workers
+                    if dataPlace.area == ""{
+                        self.arealbl.text = self.ifIsEmptyText
+                    }else{
+                         self.arealbl.text = dataPlace.area
+                    }
+                    if dataPlace.address == "" {
+                        self.location.text = self.ifIsEmptyText
+                    }else{
+                        self.location.text = dataPlace.address
+                    }
+                    if dataPlace.availiable == "" {
+                        self.avaliblelbl.text = self.ifIsEmptyText
+                    }else{
+                        self.avaliblelbl.text = dataPlace.availiable
+                    }
+                    if dataPlace.workers == "" {
+                        self.staflbl.text = self.ifIsEmptyText
+                    }else{
+                        self.staflbl.text = dataPlace.workers
+                    }
                     self.imageHell.image = dataPlace.image
-                    self.numberOfChairlbl.text = dataPlace.chairs
-                    print(dataPlace.chairs)
-                    self.numberOfRoom.text = dataPlace.rooms
+                    if dataPlace.chairs == ""{
+                        self.numberOfChairlbl.text = self.ifIsEmptyText
+                    }else{
+                        self.numberOfChairlbl.text = dataPlace.chairs
+                    }
+                    if dataPlace.rooms == ""{
+                        self.numberOfRoom.text = self.ifIsEmptyText
+                    }else{
+                        self.numberOfRoom.text = dataPlace.rooms
+                    }
                     self.imagesliderURL = dataPlace.images
                     DispatchQueue.main.async(execute: {
                       
@@ -77,7 +101,7 @@ class showDatielsVC: UIViewController {
                     })
                     
                     self.pricelbl.text = "\(dataPlace.price)"
-                    self.distanceFromHere.text = "١٠٠ كيلو متر"
+                    self.distanceFromHere.text = self.ifIsEmptyText
                     self.pagecontrollerImage.numberOfPages = dataPlace.images.count
                     self.placeRule.text = dataPlace.details
                     self.scrollViewPlaceDatails.isHidden = false
@@ -175,7 +199,8 @@ extension showDatielsVC: UICollectionViewDataSource{
 
 extension showDatielsVC : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.height)
+        
+        return CGSize(width: ((collectionView.frame.width)-30/4), height: collectionView.frame.height)
     }
     
     

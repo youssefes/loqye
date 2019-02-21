@@ -63,5 +63,7 @@ extension faqVC : UITableViewDataSource{
     }
 }
 extension faqVC : UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }
