@@ -21,7 +21,7 @@ class reservePlace: UIViewController {
         super.viewDidLoad()
        print(id)
         navigationItem.title = "احجز الان"
-        
+        self.navigationController!.navigationBar.topItem!.title = "رجوع"
     }
     func rservseHnandel() {
         guard let uid = Auth.auth().currentUser?.uid else{

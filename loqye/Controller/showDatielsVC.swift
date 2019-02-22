@@ -50,9 +50,13 @@ class showDatielsVC: UIViewController {
         placeRule.isScrollEnabled = false
         addspanner()
     
+        self.navigationController!.navigationBar.topItem!.title = "رجوع"
+        
         handelAllData(id: id)
     
     }
+    
+  
     func handelAllData(id : Int) {
         print(id)
         if id > 0 {

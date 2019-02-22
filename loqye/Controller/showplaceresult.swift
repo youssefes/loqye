@@ -10,7 +10,7 @@ import UIKit
 import Cosmos
 import TinyConstraints
 
-class allPlaceesVC: UIViewController {
+class allPlacessVC: UIViewController {
     var id_Place = 0
     
     @IBOutlet weak var noDataLbl: UILabel!
@@ -36,7 +36,9 @@ class allPlaceesVC: UIViewController {
         collectionViewPlaces.delegate = self
         addspanner()
         handelData(id:id_Place )
+        
 
+         
         // Do any additional setup after loading the view.
     }
     
@@ -88,7 +90,7 @@ class allPlaceesVC: UIViewController {
         }
     }
 }
-extension allPlaceesVC : UICollectionViewDataSource{
+extension allPlacessVC : UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -112,21 +114,21 @@ extension allPlaceesVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vcDetailes = storyboard?.instantiateViewController(withIdentifier: "showDatielsVC") as? showDatielsVC
         vcDetailes?.id = id_places[indexPath.row].id
-self.navigationController?.pushViewController(vcDetailes!, animated: true)
+        self.navigationController?.pushViewController(vcDetailes!, animated: true)
     }
 
 }
 
-extension allPlaceesVC : UICollectionViewDelegateFlowLayout{
+extension allPlacessVC : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
         let width = (screenWidth-30)/2
         return CGSize(width: width, height: 300)
     }
 }
-extension allPlaceesVC : UICollectionViewDelegate{
+extension allPlacessVC : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
     }
 }
 

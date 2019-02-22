@@ -102,7 +102,7 @@ extension Home : UITableViewDataSource{
         
 //        let cell = tableView.cellForRow(at: indexPath)
 //        cell?.contentView.backgroundColor = UIColor.clear
-        let vc = storyboard?.instantiateViewController(withIdentifier: "allPlaceesVC") as? allPlaceesVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "allPlaceesVC") as? allPlacessVC
         vc?.id_Place = allPlaces[indexPath.row].id
         self.navigationController?.pushViewController(vc!, animated: true)
         

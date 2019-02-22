@@ -477,10 +477,10 @@
             </objects>
             <point key="canvasLocation" x="2815.1999999999998" y="786.94581280788179"/>
         </scene>
-        <!--All PlaceesVC-->
+        <!--All PlacessVC-->
         <scene sceneID="s1b-6N-ZuS">
             <objects>
-                <viewController storyboardIdentifier="allPlaceesVC" id="oAp-KC-hYW" customClass="allPlaceesVC" customModule="loqye" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="allPlaceesVC" id="oAp-KC-hYW" customClass="allPlacessVC" customModule="loqye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gfE-Ys-EZd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2296,6 +2296,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="FHx-kc-yka"/>
         <segue reference="dLW-Yo-Jo7"/>
-        <segue reference="JcN-7K-rX9"/>
+        <segue reference="DPA-kd-FnV"/>
     </inferredMetricsTieBreakers>
 </document>
