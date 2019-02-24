@@ -11,6 +11,7 @@ import Kingfisher
 import Firebase
 class showDatielsVC: UIViewController {
 
+    var titlename = ""
     var ifIsEmptyText = "لا يوجد بيانات لعرضها"
     @IBOutlet weak var placeRule: UITextView!
     var id : Int = 0
@@ -53,6 +54,8 @@ class showDatielsVC: UIViewController {
         self.navigationController!.navigationBar.topItem!.title = "رجوع"
         
         handelAllData(id: id)
+        title = titlename
+        
     
     }
     

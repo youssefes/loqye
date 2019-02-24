@@ -114,9 +114,12 @@ extension allPlacessVC : UICollectionViewDataSource{
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vcDetailes = storyboard?.instantiateViewController(withIdentifier: "showDatielsVC") as? showDatielsVC
-        vcDetailes?.id = id_places[indexPath.row].id
-        self.navigationController?.pushViewController(vcDetailes!, animated: true)
+        if let vcDetailes = storyboard?.instantiateViewController(withIdentifier: "showDatielsVC") as? showDatielsVC{
+            vcDetailes.id = id_places[indexPath.row].id
+            vcDetailes.titlename = id_places[indexPath.row].title
+            self.navigationController?.pushViewController(vcDetailes, animated: true)
+        }
+       
     }
 
 }

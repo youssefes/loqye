@@ -12,7 +12,7 @@ import TinyConstraints
 
 class searchResult: UIViewController {
     var id = 0
-   
+   var name = ""
     lazy var cosmosView : CosmosView = {
         var view = CosmosView()
         return view
@@ -109,12 +109,14 @@ extension searchResult : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.id = data[indexPath.row].id
+        self.name = data[indexPath.row].title
         performSegue(withIdentifier: "pla", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  let vc = segue.destination as? showDatielsVC {
              vc.id = self.id
+            vc.titlename = self.name
         }else{
             print("no showDetailes")
         }

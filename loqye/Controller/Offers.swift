@@ -13,6 +13,7 @@ import TinyConstraints
 class Offers: UIViewController {
     var AllPlaces = [OffersData]()
     var id = 0
+    var name = ""
     fileprivate func cosmonView (retaing : Double ) -> CosmosView {
         var cosmosView : CosmosView{
             let view = CosmosView()
@@ -114,12 +115,14 @@ extension Offers: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.id = AllPlaces[indexPath.row].id
+        self.name = AllPlaces[indexPath.row].title
         print("id is \(id)")
         performSegue(withIdentifier: "fromOfferShowDatails", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! showDatielsVC
+        vc.titlename = self.name
         vc.id = self.id
     }
 }
