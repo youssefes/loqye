@@ -43,7 +43,7 @@ class Offers: UIViewController {
         collectionViewPlaces.delegate = self
         addspanner()
         loadData()
-       
+       title = "العروض"
     
     }
     func loadData()  {

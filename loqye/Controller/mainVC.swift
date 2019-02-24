@@ -8,8 +8,6 @@
 
 import UIKit
 import UserNotifications
-
-
 class mainVC: UIViewController {
 
     override func viewDidLoad() {
@@ -18,6 +16,16 @@ class mainVC: UIViewController {
         }
     
 
+}
+extension UITabBarController {
+    @IBInspectable var selected_index: Int {
+        get {
+            return selectedIndex
+        }
+        set(index) {
+            selectedIndex = index
+        }
+    }
 }
 
 

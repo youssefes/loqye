@@ -12,6 +12,7 @@ import TinyConstraints
 
 class allPlacessVC: UIViewController {
     var id_Place = 0
+    var name = ""
     
     @IBOutlet weak var noDataLbl: UILabel!
     
@@ -36,6 +37,7 @@ class allPlacessVC: UIViewController {
         collectionViewPlaces.delegate = self
         addspanner()
         handelData(id:id_Place )
+        title = name
         
 
          

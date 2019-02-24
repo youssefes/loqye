@@ -12,6 +12,7 @@ import TinyConstraints
 
 class searchResult: UIViewController {
     var id = 0
+   
     lazy var cosmosView : CosmosView = {
         var view = CosmosView()
         return view
@@ -25,6 +26,7 @@ class searchResult: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         collectionsearch.dataSource = self
         collectionsearch.delegate = self
         HandelData()

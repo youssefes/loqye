@@ -176,7 +176,7 @@ extension showDatielsVC: UICollectionViewDataSource{
         if imagesliderURL.count > 0{
             return imagesliderURL.count
         }else{
-            return 4
+            return 1
         }
         
     }
