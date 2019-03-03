@@ -225,20 +225,13 @@ extension API{
                     }else{
                         complation(true, allMyResData)
                     }
-                   
-                    
+
                 }else{
                     complation(false, nil)
                 }
 
-               
             }
-
         }
-
-
-        
-        
     }
 }
 

@@ -36,12 +36,10 @@ class allPlacessVC: UIViewController {
         collectionViewPlaces.dataSource = self
         collectionViewPlaces.delegate = self
         addspanner()
-        handelData(id:id_Place )
+        DispatchQueue.global(qos : .userInteractive).async {
+            self.handelData(id:self.id_Place )
+        }
         title = name
-        
-
-         
-        // Do any additional setup after loading the view.
     }
     
     func handelData(id :Int){
@@ -61,7 +59,10 @@ class allPlacessVC: UIViewController {
                 }else{
                     self.noDataLbl.isEnabled = true
                     self.id_places = datapl
-                    self.collectionViewPlaces.reloadData()
+                    DispatchQueue.main.async {
+                         self.collectionViewPlaces.reloadData()
+                    }
+                   
                     self.removerspanner()
                 }
                 

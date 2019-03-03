@@ -19,9 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
+        
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
+        do{
+            try? Auth.auth().signOut()
+        }catch{
+            print(error)
+        }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (Authoriaed:Bool, error:Error?) in
             if !Authoriaed{
                 print("app useless becouse app did authorithed")

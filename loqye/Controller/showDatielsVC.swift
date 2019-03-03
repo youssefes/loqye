@@ -52,8 +52,10 @@ class showDatielsVC: UIViewController {
         addspanner()
     
         self.navigationController!.navigationBar.topItem!.title = "رجوع"
+        DispatchQueue.global(qos : .userInteractive).async {
+            self.handelAllData(id: self.id)
+        }
         
-        handelAllData(id: id)
         title = titlename
         
     
@@ -103,7 +105,6 @@ class showDatielsVC: UIViewController {
                     }
                     self.imagesliderURL = dataPlace.images
                     DispatchQueue.main.async(execute: {
-                      
                         self.imagecollectionView.reloadData()
                     })
                     
@@ -185,13 +186,18 @@ extension showDatielsVC: UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sliderCell", for: indexPath) as! sliderCell
-        let imaged = UIImage(named: "imd")
         if imagessliders.count > 0{
             for url in self.imagesliderURL {
                 let URL_image = URL(string: url)
-                cell.sliderimage.kf.setImage(with: URL_image, placeholder: imaged, options: [.transition(ImageTransition.flipFromLeft(0.5))], progressBlock: nil) { (image, error, cache, url) in
-                    self.imagessliders.append(image!)
+                DispatchQueue.global(qos : .userInteractive).async {
+                    DispatchQueue.main.async {
+                        cell.sliderimage.kf.indicatorType = .activity
+                        cell.sliderimage.kf.setImage(with: URL_image, placeholder: nil, options: [.transition(ImageTransition.flipFromLeft(0.5))], progressBlock: nil) { (image, error, cache, url) in
+                            self.imagessliders.append(image!)
+                        }
+                    }
                 }
+               
                 
             }
         

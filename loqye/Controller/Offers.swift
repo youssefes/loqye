@@ -43,7 +43,10 @@ class Offers: UIViewController {
         collectionViewPlaces.dataSource = self
         collectionViewPlaces.delegate = self
         addspanner()
-        loadData()
+        DispatchQueue.global(qos : .userInteractive).async {
+            self.loadData()
+        }
+        
        title = "العروض"
     
     }
@@ -56,7 +59,9 @@ class Offers: UIViewController {
                 }
                 self.AllPlaces = data
                 print(data)
-                self.collectionViewPlaces.reloadData()
+                DispatchQueue.main.async {
+                    self.collectionViewPlaces.reloadData()
+                }
                 self.removerspanner()
                 
                 

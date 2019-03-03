@@ -29,7 +29,10 @@ class searchResult: UIViewController {
        
         collectionsearch.dataSource = self
         collectionsearch.delegate = self
-        HandelData()
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.HandelData()
+        }
+        
     }
     
     @IBAction func btnBack(_ sender: Any) {
@@ -47,7 +50,10 @@ class searchResult: UIViewController {
                 {
                     self.data = alldata
                     self.removerspanner()
-                    self.collectionsearch.reloadData()
+                    DispatchQueue.main.async {
+                        self.collectionsearch.reloadData()
+                    }
+                    
                     
                 }else{
                     let alert = UIAlertController(title: "تاكد من الاسم", message: "لا يوجد قاعه بهذا الاسم", preferredStyle: .alert)
@@ -62,14 +68,8 @@ class searchResult: UIViewController {
                 let alert = UIAlertController(title: "خطا", message: "هناك مشكله في اتصال الانترنت", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                
-                
             }
-            
         }
-        
-        
-        
     }
     func addspanner() {
         spanner = UIActivityIndicatorView()

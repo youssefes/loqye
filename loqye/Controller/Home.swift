@@ -25,8 +25,9 @@ class Home: UIViewController {
         tableViewDepart.contentInset = .zero
         
         addspanner()
-        handeledData()
-        
+        DispatchQueue.global(qos : .userInitiated).async {
+            self.handeledData()
+        }
     }
     
     func handeledData(){
@@ -44,8 +45,10 @@ class Home: UIViewController {
                 for department in departs{
                     self.allPlaces.append(department)
                     print(self.allPlaces)
-                    
-                    self.tableViewDepart.reloadData()
+                    DispatchQueue.main.async {
+                         self.tableViewDepart.reloadData()
+                    }
+                   
                 }
                 self.removerspanner()
             }
