@@ -1,6 +1,6 @@
 
 
-![1](https://user-images.githubusercontent.com/46077105/54030342-fd87d600-41b3-11e9-9133-ffb2715991b9.jpg)
+
 ![2](https://user-images.githubusercontent.com/46077105/54030348-0082c680-41b4-11e9-81a3-e3e0654bf3b5.jpg)
 ![3](https://user-images.githubusercontent.com/46077105/54030352-037db700-41b4-11e9-96a8-1169145e1d8d.jpg)
 ![4](https://user-images.githubusercontent.com/46077105/54030364-0bd5f200-41b4-11e9-9b8d-a8a3fcc91937.jpg)
